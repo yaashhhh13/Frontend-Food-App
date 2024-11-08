@@ -1,0 +1,26 @@
+.drop-menu{
+    background-color: white;
+    
+}
+
+.foot{
+    background-color: rgb(31, 30, 30);
+}
+
+.main{
+    background-color: purple;
+    color: white;
+}
+
+.home{
+    width: 100vw;
+    height: max-content ;
+}
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
