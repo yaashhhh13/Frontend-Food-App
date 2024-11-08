@@ -64,7 +64,7 @@ const ViewCart = ({ food }) => {
           {cartItems.length !== 0 && (
             <center>
               <Link to="/checkout">
-                <button className="active:scale-90 transition duration-150 hover:scale-105 py-1 sm:py-2 px-3 sm:px-5 rounded-lg text-lg cursor-pointer bg-rose-500 border-0 w-fit">
+                <button className="active:scale-90 text-white transition duration-150 hover:scale-105 py-1 sm:py-2 px-3 sm:px-5 rounded-lg text-lg cursor-pointer bg-rose-500 border-0 w-fit">
                   Check out
                 </button>
               </Link>

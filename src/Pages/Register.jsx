@@ -14,7 +14,7 @@ const Register = () => {
     formData.append("image",file);
     setUploading(true)
     try {
-      const {data} = await axios.post('http://localhost:8000/api/v1/all/upload-image',formData);
+      const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/all/upload-image`,formData);
       // console.log("sending data to backend")
       setUploading(false)
       setImage({
@@ -41,7 +41,7 @@ const Register = () => {
 
     // console.log(userData)
 
-    fetch('http://localhost:8000/api/v1/user/register',{
+    fetch(`${import.meta.env.VITE_API_URL}/user/register`,{
       method: "POST",
       headers: {
         "content-type": "application/json",

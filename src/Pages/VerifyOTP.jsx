@@ -19,7 +19,7 @@ const verifyOTP = () => {
     e.preventDefault();
     const email = user?.user?.email;
     const dataOTP = { email, combineOTP };
-    fetch("http://localhost:8000/api/v1/user/verifyOTP", {
+    fetch(`${import.meta.env.VITE_API_URL}/user/verifyOTP`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

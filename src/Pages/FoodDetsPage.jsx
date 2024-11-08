@@ -3,15 +3,17 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { AiOutlineMinus } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
+import { useCartContext } from "../../context/cartContext";
 
 const FoodDetsPage = () => {
   const params = useParams();
   const [foodDets, setFoodDets] = useState([]);
+  const { addToCart } = useCartContext();
 
   const GetFoodDets = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/v1/FoodRoute/Food-Dets/${params.id}`
+        `${import.meta.env.VITE_API_URL}/FoodRoute/Food-Dets/${params.id}`
       );
 
       //   console.log("sent food dets request")
@@ -28,7 +30,7 @@ const FoodDetsPage = () => {
     GetFoodDets();
   }, []);
 
-  // console.log(foodDets.FoodImage);
+  // console.log(foodDets);
 
   // console.log(params)
 
@@ -60,8 +62,8 @@ const FoodDetsPage = () => {
               </div>
             </div>
             <div className="btns flex gap-3">
-                <button className="bg-rose-500 rounded-full cursor-pointer max-[350px]:text-lg text-xl sm:text-2xl md:text-3xl py-1 sm:py-2 px-3 sm:px-5 rounded-lg pb-3">Add to cart</button>
-                <button className="bg-rose-500 rounded-full cursor-pointer max-[350px]:text-lg text-xl sm:text-2xl md:text-3xl py-1 sm:py-2 px-3 sm:px-5 rounded-lg pb-3">Favourites</button>
+                <button onClick={() => addToCart(foodDets)} className="bg-rose-500 rounded-full text-white cursor-pointer max-[350px]:text-lg text-xl sm:text-2xl md:text-3xl py-1 sm:py-2 px-3 sm:px-5 rounded-lg pb-3">Add to cart</button>
+                {/* <button className="bg-rose-500 rounded-full cursor-pointer max-[350px]:text-lg text-xl sm:text-2xl md:text-3xl py-1 sm:py-2 px-3 sm:px-5 rounded-lg pb-3">Favourites</button> */}
             </div>
           </div>
         </div>

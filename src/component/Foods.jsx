@@ -1,16 +1,21 @@
 import { FaStar } from "react-icons/fa";
 import { useCartContext } from "../../context/cartContext";
+import { Link } from "react-router-dom";
 
 const Foods = ({ curElem }) => {
   const { addToCart } = useCartContext();
+
+  console.log(curElem);
 
   // console.log(curElem)
   return (
     <>
       <div className="card w-full text-black bg-purple-300">
-        <figure>
-          <img src={curElem.FoodImage} className="w-full h-40 sm:h-54"/>
-        </figure>
+        <Link to={`/Menu/${curElem?._id}`}>
+          <figure>
+            <img src={curElem.FoodImage} className="w-full h-40 sm:h-54" />
+          </figure>
+        </Link>
         <div className="card p-4">
           <h1 className="card-title text-lg sm:text-xl">
             {curElem.FoodName}

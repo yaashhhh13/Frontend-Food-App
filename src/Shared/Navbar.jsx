@@ -70,7 +70,7 @@ const Navbar = () => {
                 </span>
                 <div className="card-actions">
                   <Link to="/view-cart">
-                    <button className="active:scale-90 transition duration-150 hover:scale-105 py-2 px-5 rounded-lg text-lg cursor-pointer bg-rose-500 border-0">
+                    <button className="active:scale-90 transition text-white duration-150 hover:scale-105 py-2 px-5 rounded-lg text-lg cursor-pointer bg-rose-500 border-0">
                       View cart
                     </button>
                   </Link>

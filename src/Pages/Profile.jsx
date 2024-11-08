@@ -17,7 +17,7 @@ const Profile = () => {
     setUploading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/api/v1/all/upload-image",
+        `${import.meta.env.VITE_API_URL}/all/upload-image`,
         formData
       );
       // console.log("sending data to backend")
@@ -49,7 +49,7 @@ const Profile = () => {
 
       try {
         const res = await axios.put(
-          "http://localhost:8000/api/v1/user/UpdateProfiledetails",
+          `${import.meta.env.VITE_API_URL}/user/UpdateProfiledetails`,
           {
             userID: user.user._id,
             name,
@@ -81,7 +81,7 @@ const Profile = () => {
   return (
     <>
       <div className="Edit-profile flex flex-col justify-center items-center">
-        <center className="text-3xl mt-4 sm:text-5xl">Update Profile</center>
+        <center className="text-3xl mt-4 sm:text-5xl text-black font-semibold">Update Profile</center>
         <div className="edit w-full md:w-2/3 mt-3 p-4">
           <form
             onSubmit={handleUpdateFormSubmit}
@@ -147,7 +147,7 @@ const Profile = () => {
               placeholder={user?.user.role || "enter your role"}
               className="input input-bordered input-secondary w-full sm:w-2/3"
             />
-            <button className="w-full sm:w-2/3 bg-rose-500 text-2xl py-3 rounded-full cursor-pointer">
+            <button className="w-full sm:w-2/3 bg-rose-500 text-2xl py-3 text-white rounded-full cursor-pointer">
               Update Profile
             </button>
             <ToastContainer />

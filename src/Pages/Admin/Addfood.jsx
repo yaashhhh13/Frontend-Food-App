@@ -14,7 +14,7 @@ const Addfood = () => {
     setUploading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/api/v1/all/upload-image",
+        `${import.meta.env.VITE_API_URL}/all/upload-image`,
         formData
       );
       // console.log("sending data to backend")
@@ -58,7 +58,7 @@ const Addfood = () => {
     // console.log(`starting form submitting process with this data ${FoodData}`);
 
     const res = await axios.post(
-      "http://localhost:8000/api/v1/FoodRoute/Addfood",
+      "${import.meta.env.VITE_API_URL}/FoodRoute/Addfood",
       { FoodName,
         FoodImage,
         FoodPrice,

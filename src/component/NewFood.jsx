@@ -12,7 +12,7 @@ const NewFood = () => {
       const jwtToken = localStorage.getItem("token");
 
       const res = await axios.get(
-        `http://localhost:8000/api/v1/FoodRoute/GetNewFood`,
+        `${import.meta.env.VITE_API_URL}/FoodRoute/GetNewFood`,
         {
           headers: {
             Authorization: `Bearer ${jwtToken}`,
@@ -42,7 +42,7 @@ const NewFood = () => {
     <>
       <div className="recomended-Food container w-full mx-auto p-2 sm:p-5">
         <center>
-          <h1 className="text-2xl sm:text-5xl text-rose-600">New Food</h1>
+          <h1 className="text-2xl sm:text-5xl text-rose-600 font-semibold">New Food</h1>
         </center>
         <div className="Foods mt-8 align-center text-black w-full grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {newFood.splice(0,8).map((curElem) => (

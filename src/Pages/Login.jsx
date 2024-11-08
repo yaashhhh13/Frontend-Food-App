@@ -16,7 +16,7 @@ const Login = () => {
 
     // console.log(userData)
 
-    fetch('http://localhost:8000/api/v1/user/login',{
+    fetch(`${import.meta.env.VITE_API_URL}/user/login`,{
       method: "POST",
       headers: {
         "content-type": "application/json",

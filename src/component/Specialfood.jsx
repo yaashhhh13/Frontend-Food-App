@@ -15,7 +15,7 @@ const SpecialFood = () => {
 
       // console.log("sent food dets request 1");
       const res = await axios.get(
-        "http://localhost:8000/api/v1/FoodRoute/SpecialFoods",
+        `${import.meta.env.VITE_API_URL}/FoodRoute/SpecialFoods`,
         {
           headers: {
             Authorization: `Bearer ${jwtToken}`,

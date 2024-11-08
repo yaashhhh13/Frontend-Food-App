@@ -12,7 +12,7 @@ const MyOrders = () => {
     try {
       const jwtToken = localStorage.getItem("token");
       const res = await axios.post(
-        `http://localhost:8000/api/v1/Order/GetAllOrders`,
+        `${import.meta.env.VITE_API_URL}/Order/GetAllOrders`,
         { userId: user.user._id },
         {
           headers: {
@@ -96,7 +96,7 @@ const MyOrders = () => {
                 <h1>${or.TotalAmount} (inclusive of all taxes)</h1>
               </div>
               <Link to={`/singleOrderDets/${or._id}`}>
-                <button className="active:scale-90 self-center transition duration-150 hover:scale-95 py-1 sm:py-2 px-3 sm:px-5 rounded-full text-md md:text-lg cursor-pointer bg-rose-500 border-0">
+                <button className="active:scale-90 self-center transition duration-150 hover:scale-95 py-1 sm:py-2 px-3 sm:px-5 rounded-full text-md md:text-lg cursor-pointer bg-rose-500 border-0 text-white">
                   More Details
                 </button>
               </Link>

@@ -14,7 +14,7 @@ const SingleOrderDets = () => {
     try {
       // console.log("sending api req");
       const res = await axios.post(
-        `http://localhost:8000/api/v1/Order/GetOrder`,
+        `${import.meta.env.VITE_API_URL}/Order/GetOrder`,
         {
           OrderId: params.id,
           token: localStorage.getItem("token"),
@@ -47,7 +47,7 @@ const SingleOrderDets = () => {
     try {
       // console.log(params.id);
       const res = await axios.post(
-        `http://localhost:8000/api/v1/Order/DeliveredOrder`,
+        `${import.meta.env.VITE_API_URL}/Order/DeliveredOrder`,
         {
           OrderId: params.id,
           token: localStorage.getItem("token"),

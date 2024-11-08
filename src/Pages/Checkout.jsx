@@ -33,7 +33,7 @@ const Checkout = () => {
 
       // console.log("reached 34th line")
       
-      const res = await axios.post(`http://localhost:8000/api/v1/Order/createOrder`, {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/Order/createOrder`, {
         user: user?.user._id,
         Items: orderItems,
         TotalAmount:FinalTotalPrice,
@@ -74,7 +74,7 @@ const Checkout = () => {
             <h1>Total Price : ${FinalTotalPrice}</h1>
           </div>
           <Link to="/checkout">
-            <button onClick={handleFinish} className="active:scale-90 transition duration-150 mt-4 hover:scale-105 py-2 px-9 rounded-full text-lg cursor-pointer bg-rose-500 border-0 w-fit">
+            <button onClick={handleFinish} className="active:scale-90 transition duration-150 text-white mt-4 hover:scale-105 py-2 px-9 rounded-full text-lg cursor-pointer bg-rose-500 border-0 w-fit">
               pay
             </button>
           </Link>

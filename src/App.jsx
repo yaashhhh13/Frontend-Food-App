@@ -26,7 +26,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   const stripePromise = loadStripe(
-    'pk_test_51OosFhSHn7i3OBEmYYZbktMXAhm0I4BBLLdjh8Wk7KT44l62crotit8zwJF9MhkQXCLYaK8IUPigRzNRxYw24uFl00pD4CfFwg'
+    import.meta.env.VITE_STRIPE_TEST_KEYS
   );
 
   return (

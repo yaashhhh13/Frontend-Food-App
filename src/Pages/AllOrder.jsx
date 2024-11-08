@@ -12,7 +12,7 @@ const AllOrder = () => {
     try {
       const jwtToken = localStorage.getItem("token");
       const res = await axios.post(
-        `http://localhost:8000/api/v1/Order/GetAllOrders`,
+        `${import.meta.env.VITE_API_URL}/Order/GetAllOrders`,
         {
           userId: user.user._id,
           token: localStorage.getItem("token"),

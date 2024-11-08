@@ -13,7 +13,7 @@ const RecomendedFood = () => {
       const jwtToken = localStorage.getItem("token");
       // console.log("sent food dets request 1");
       const res = await axios.get(
-        `http://localhost:8000/api/v1/FoodRoute/TopRatedFood`,{
+        `${import.meta.env.VITE_API_URL}/FoodRoute/TopRatedFood`,{
           headers: {
             Authorization: `Bearer ${jwtToken}`,
             Accept: "application/json",
